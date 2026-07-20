@@ -30,20 +30,25 @@ Google** (preinstallata sui Pixel).
 ## Come ottenere l'APK **senza Android SDK sul tuo computer** (consigliato)
 
 Il repository include un workflow GitHub Actions (`.github/workflows/build-apk.yml`)
-che compila l'APK nel cloud, dove l'Android SDK è già presente. Tu non installi
-niente di sviluppo.
+che compila l'APK nel cloud, dove l'Android SDK è già presente, e lo pubblica come
+**Release**. Tu non installi niente di sviluppo.
 
-1. Su GitHub, apri la scheda **Actions** del repository.
-2. Apri il workflow **Build APK** (parte da solo a ogni push; puoi anche avviarlo
-   a mano con **Run workflow**).
-3. Quando finisce (pochi minuti), scorri in fondo alla pagina della run e scarica
-   l'artifact **`SaltaSveglie-debug-apk`** (uno zip con dentro `app-debug.apk`).
-4. Passa l'APK sul Pixel 7 (Drive, email, cavo…) e aprilo. Alla prima installazione
-   Android chiede di autorizzare l'installazione da "origini sconosciute": conferma.
-5. Aggiungi il widget: pressione lunga sulla Home → **Widget** → **Salta Sveglie**.
+**Download diretto (senza login), sempre l'ultima build:**
+
+<https://github.com/Volturno-Luca/alarm-ignore/releases/latest>
+
+oppure il file diretto: `SaltaSveglie.apk` nella pagina della Release
+**latest**.
+
+Poi:
+
+1. Apri l'APK scaricato sul Pixel 7. Alla prima installazione Android chiede di
+   autorizzare l'installazione da "origini sconosciute": conferma.
+2. Aggiungi il widget: pressione lunga sulla Home → **Widget** → **Salta Sveglie**.
 
 L'APK di debug è firmato automaticamente (schema v2), quindi è installabile sul
-Pixel senza altri passaggi.
+Pixel senza altri passaggi. Il workflow parte da solo a ogni push; puoi anche
+avviarlo a mano dalla scheda **Actions → Build APK → Run workflow**.
 
 ## In alternativa: compilazione locale con Android Studio
 
