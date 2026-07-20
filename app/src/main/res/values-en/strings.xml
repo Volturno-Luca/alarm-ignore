@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Skip Alarms</string>
+    <string name="widget_label">Skip Alarms</string>
+
+    <string name="title">Skip today\'s alarms</string>
+    <string name="explanation">One tap skips the next ring of every alarm. They stay enabled and will ring again on their scheduled day.\n\nFor true one-tap use, add the “%1$s” widget to your Home screen.</string>
+    <string name="skip_button">Skip all of today\'s alarms</string>
+    <string name="widget_button">Skip\nalarms</string>
+
+    <string name="toast_skipped">Today\'s alarms skipped. They will ring again on their scheduled day.</string>
+    <string name="toast_no_clock_app">No compatible Clock app found on this device.</string>
+</resources>

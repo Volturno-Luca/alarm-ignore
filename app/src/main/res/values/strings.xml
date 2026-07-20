@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Salta Sveglie</string>
+    <string name="widget_label">Salta Sveglie</string>
+
+    <string name="title">Salta le sveglie di oggi</string>
+    <string name="explanation">Un tocco salta la prossima suoneria di tutte le sveglie. Restano attive: suoneranno di nuovo il giorno programmato.\n\nPer il tocco singolo aggiungi il widget «%1$s» alla schermata Home.</string>
+    <string name="skip_button">Salta tutte le sveglie di oggi</string>
+    <string name="widget_button">Salta\nsveglie</string>
+
+    <string name="toast_skipped">Sveglie di oggi saltate. Suoneranno di nuovo il giorno programmato.</string>
+    <string name="toast_no_clock_app">Nessuna app Orologio compatibile trovata su questo dispositivo.</string>
+</resources>
