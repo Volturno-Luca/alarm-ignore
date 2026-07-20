@@ -27,30 +27,44 @@ Google** (preinstallata sui Pixel).
   le sveglie di oggi (nessuna app da aprire, compare solo una conferma).
 - **App:** apri *Salta Sveglie* e premi il pulsante grande.
 
-## Compilazione / installazione
+## Come ottenere l'APK **senza Android SDK sul tuo computer** (consigliato)
 
-Serve [Android Studio](https://developer.android.com/studio) (che scarica in
-automatico Gradle e l'Android SDK).
+Il repository include un workflow GitHub Actions (`.github/workflows/build-apk.yml`)
+che compila l'APK nel cloud, dove l'Android SDK è già presente. Tu non installi
+niente di sviluppo.
 
-1. `File > Open` e seleziona questa cartella.
-2. Collega il Pixel 7 in USB con il **debug USB** attivo
-   (*Impostazioni > Info sul telefono*, tocca 7 volte "Numero build"; poi
-   *Opzioni sviluppatore > Debug USB*).
-3. Premi **Run ▶**. L'app viene installata sul telefono.
+1. Su GitHub, apri la scheda **Actions** del repository.
+2. Apri il workflow **Build APK** (parte da solo a ogni push; puoi anche avviarlo
+   a mano con **Run workflow**).
+3. Quando finisce (pochi minuti), scorri in fondo alla pagina della run e scarica
+   l'artifact **`SaltaSveglie-debug-apk`** (uno zip con dentro `app-debug.apk`).
+4. Passa l'APK sul Pixel 7 (Drive, email, cavo…) e aprilo. Alla prima installazione
+   Android chiede di autorizzare l'installazione da "origini sconosciute": conferma.
+5. Aggiungi il widget: pressione lunga sulla Home → **Widget** → **Salta Sveglie**.
 
-Da riga di comando (con Android SDK configurato):
+L'APK di debug è firmato automaticamente (schema v2), quindi è installabile sul
+Pixel senza altri passaggi.
 
-```bash
-./gradlew installDebug
-```
+## In alternativa: compilazione locale con Android Studio
 
-L'APK firmato di debug si trova in `app/build/outputs/apk/debug/`.
+Se preferisci, apri la cartella in [Android Studio](https://developer.android.com/studio)
+(scarica da sé Gradle e l'SDK), collega il Pixel in USB con il **debug USB** attivo
+e premi **Run ▶**. Da riga di comando, con l'SDK configurato: `./gradlew installDebug`.
 
-## Alternativa senza installare nulla
+## Alternativa senza nessuna app da compilare
 
-Se non vuoi compilare l'app, puoi dire a voce: **«Hey Google, salta la prossima
-sveglia»** / *"dismiss next alarm"*. Il widget di questo progetto rende però
-l'operazione un vero **tocco singolo** e agisce su **tutte** le sveglie insieme.
+Vuoi il tocco singolo *oggi stesso* senza aspettare la build? Con l'app gratuita
+**Automate** (LlamaLab) puoi creare in due blocchi la stessa azione e metterla come
+scorciatoia/widget sulla Home:
+
+- Blocco **Start** → blocco **App > Start activity** con:
+  - Action: `android.intent.action.DISMISS_ALARM`
+  - Extra (String) `android.intent.extra.alarm.SEARCH_MODE` = `android.all`
+  - Extra (Boolean) `android.intent.extra.alarm.SKIP_UI` = `true`
+- Poi aggiungi il widget/shortcut di Automate che avvia il flow.
+
+A voce funziona sempre: **«Hey Google, salta la prossima sveglia»**. Il vantaggio di
+questo progetto è il **tocco singolo** che agisce su **tutte** le sveglie insieme.
 
 ## Struttura del progetto
 
