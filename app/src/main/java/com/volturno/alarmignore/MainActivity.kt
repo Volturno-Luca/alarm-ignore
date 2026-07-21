@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         findViewById<Button>(R.id.skip_button).setOnClickListener {
-            AlarmSkipper.skipAllAlarms(this)
+            AlarmSkipper.skipNextAlarm(this)
         }
     }
 }

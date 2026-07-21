@@ -7,6 +7,6 @@
     <string name="skip_button">Skip all of today\'s alarms</string>
     <string name="widget_button">Skip\nalarms</string>
 
-    <string name="toast_skipped">Today\'s alarms skipped. They will ring again on their scheduled day.</string>
+    <string name="toast_skipped">\"Skip\" sent to the Clock for the next alarm.</string>
     <string name="toast_no_clock_app">No compatible Clock app found on this device.</string>
 </resources>
