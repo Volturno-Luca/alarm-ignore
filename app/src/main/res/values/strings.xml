@@ -12,5 +12,6 @@
         <item quantity="other">Saltate %d sveglie di oggi. Restano attive per i prossimi giorni.</item>
     </plurals>
     <string name="toast_none">Nessuna sveglia da saltare per oggi.</string>
+    <string name="toast_sent">Comando \"salta\" inviato all\'Orologio. Controlla se la sveglia viene saltata.</string>
     <string name="toast_no_clock_app">Nessuna app Orologio compatibile trovata su questo dispositivo.</string>
 </resources>

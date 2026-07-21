@@ -12,5 +12,6 @@
         <item quantity="other">Skipped %d alarms for today. Still active for the coming days.</item>
     </plurals>
     <string name="toast_none">No alarms to skip for today.</string>
+    <string name="toast_sent">\"Skip\" sent to the Clock. Check whether the alarm gets skipped.</string>
     <string name="toast_no_clock_app">No compatible Clock app found on this device.</string>
 </resources>
