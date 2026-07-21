@@ -11,17 +11,32 @@ android {
         applicationId = "com.volturno.alarmignore"
         minSdk = 23
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
+    }
+
+    // Fixed signing key (committed) so every CI build is signed with the same
+    // key — updates then install over each other without an uninstall.
+    signingConfigs {
+        create("shared") {
+            storeFile = rootProject.file("keystore/skipalarms.jks")
+            storePassword = "skipalarms"
+            keyAlias = "skipalarms"
+            keyPassword = "skipalarms"
+        }
     }
 
     buildTypes {
+        debug {
+            signingConfig = signingConfigs.getByName("shared")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("shared")
         }
     }
 

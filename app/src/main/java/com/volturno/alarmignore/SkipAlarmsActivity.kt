@@ -11,7 +11,6 @@ import android.os.Bundle
 class SkipAlarmsActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AlarmSkipper.skipNextAlarm(this)
-        finish()
+        AlarmSkipper.skipTodaysAlarms(this) { finish() }
     }
 }

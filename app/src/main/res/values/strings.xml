@@ -7,6 +7,10 @@
     <string name="skip_button">Salta tutte le sveglie di oggi</string>
     <string name="widget_button">Salta\nsveglie</string>
 
-    <string name="toast_skipped">Comando \"salta\" inviato all\'Orologio per la prossima sveglia.</string>
+    <plurals name="toast_skipped_count">
+        <item quantity="one">Saltata %d sveglia di oggi. Restano attive per i prossimi giorni.</item>
+        <item quantity="other">Saltate %d sveglie di oggi. Restano attive per i prossimi giorni.</item>
+    </plurals>
+    <string name="toast_none">Nessuna sveglia da saltare per oggi.</string>
     <string name="toast_no_clock_app">Nessuna app Orologio compatibile trovata su questo dispositivo.</string>
 </resources>
